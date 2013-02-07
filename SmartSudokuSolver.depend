@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1359649853 source:d:\users\albert\desktop\albert\programación\c++\smartsudokusolver\main.cpp
+	"opencv2/opencv.hpp"
+	"opencv2/highgui/highgui.hpp"
+	"opencv2/imgproc/imgproc.hpp"
+	"vector"
+	"string"
+	"sstream"
+
+1360261015 source:d:\users\albert\desktop\albert\programación\c++\smartsudokusolver\src\main.cpp
+	"vector"
+	"string"
+	"sstream"
+	"Ocr.h"
+
+1360260734 source:d:\users\albert\desktop\albert\programación\c++\smartsudokusolver\src\ocr.cpp
+	"Ocr.h"
+
+1360260084 d:\users\albert\desktop\albert\programación\c++\smartsudokusolver\src\ocr.h
+	"opencv2/opencv.hpp"
+	"opencv2/highgui/highgui.hpp"
+	"opencv2/imgproc/imgproc.hpp"
+	"opencv2/ml/ml.hpp"
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+
