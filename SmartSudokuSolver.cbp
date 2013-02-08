@@ -32,6 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="src/SudokuAnalysis.cpp" />
+		<Unit filename="src/SudokuAnalysis.h" />
+		<Unit filename="src/SudokuSolver.cpp" />
+		<Unit filename="src/SudokuSolver.h" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/ocr.cpp" />
 		<Unit filename="src/ocr.h" />

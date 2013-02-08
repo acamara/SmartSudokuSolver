@@ -5,12 +5,9 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/ml/ml.hpp">
-#include <time.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 using namespace cv;
-#define MAX_NUM_IMAGES    60000
+using namespace std;
 
 class Ocr{
     public:
@@ -18,7 +15,7 @@ class Ocr{
         ~Ocr();
 
         bool train(CvMat* trainData, CvMat* trainClasses);
-        int classify(Mat grayimage, int ImageSize);
+        int classify(Mat grayimage, int imagesize);
         Mat preprocess_image_digit(Mat grayimage, int sizex, int sizey, bool& is_number);
         Mat preprocess_image(Mat inImage,int sizex, int sizey);
         void runselftest();
@@ -30,12 +27,11 @@ class Ocr{
         int classes = 10;
         int sizex = 50;
         int sizey = 50;
-        int ImageSize = sizex*sizey;
-        string pathToImages = "train_numbers";
+        int imagesize = sizex*sizey;
+        string pathtoimages = "train_numbers";
         KNearest *knn;
         CvMat* trainData;
         CvMat* trainClasses;
-        int numRows, numCols, numImages;
         int num_iterations;
         int num_digits;
 };
