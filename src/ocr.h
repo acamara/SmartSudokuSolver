@@ -24,7 +24,7 @@ class Ocr{
 
     private:
         int train_samples = 1;
-        int classes = 10;
+        int classes = 9;
         int sizex = 50;
         int sizey = 50;
         int imagesize = sizex*sizey;

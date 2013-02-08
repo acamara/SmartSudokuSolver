@@ -59,10 +59,11 @@ Mat Ocr::preprocess_image_digit(Mat grayimage, int sizex, int sizey, bool& is_nu
 
     thresholdImage.copyTo(contourImage);
 
-    Mat output(thresholdImage, cv::Range(4, 46), cv::Range(4, 46));
+    Mat output(thresholdImage, cv::Range(10, 40), cv::Range(10, 40));
     int count_non=countNonZero(output);
-    if(count_non >140){
-        //std::cout<<"Existe número: "<<count_non<<std::endl;
+
+    if(count_non >160){
+        //cout<<"Existe número: "<<count_non<<std::endl;
         num_digits++;
         is_number = true;
     }
@@ -72,6 +73,7 @@ Mat Ocr::preprocess_image_digit(Mat grayimage, int sizex, int sizey, bool& is_nu
     //std::cout<<"Número de dígitos en el sudoku: "<<num_digits<<std::endl;
     //namedWindow("Threshold digit", CV_WINDOW_AUTOSIZE);
     //imshow("Threshold digit", output);
+    //waitKey(0);
 
     findContours(contourImage, contours, RETR_LIST, CHAIN_APPROX_SIMPLE);
 
@@ -122,14 +124,16 @@ void Ocr::runselftest(){
 bool Ocr::train(CvMat* trainData, CvMat* trainClasses){
     Mat img;
     char file[255];
-
+    int k = 1;
     for (int i = 0; i < classes; i++){
-        sprintf(file, "%s/digit_1%d.jpg", pathtoimages.c_str(), i);
+        sprintf(file, "%s/digit_1%d.jpg", pathtoimages.c_str(), k);
+        k++;
         img = imread(file, 1);
         if (!img.data){
-            std::cout << "File " << file << " not found\n";
+            cout << "File " << file << " not found\n";
             exit(1);
         }
+        //cout<<file<<endl;
         Mat outfile = preprocess_image(img, sizex, sizey);
 
         for (int n = 0; n < imagesize; n++){
@@ -152,7 +156,7 @@ int Ocr::classify(Mat grayimage, int imagesize){
         }
         float detectedClass = knn->find_nearest(sample2, 1);
 
-        output_num = (int) ((detectedClass));
+        output_num = (int) ((detectedClass))+1;
     }
 
     return output_num;
