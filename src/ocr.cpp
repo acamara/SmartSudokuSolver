@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 Ocr::Ocr(){
-    num_iterations = 1;
     num_digits = 0;
 
     trainData =  cvCreateMat(classes * train_samples,imagesize, CV_32FC1);
@@ -141,6 +140,7 @@ bool Ocr::train(CvMat* trainData, CvMat* trainClasses){
 }
 
 int Ocr::classify(Mat grayimage, int imagesize){
+    int output_num = -1;
     CvMat* sample2 = cvCreateMat(1, imagesize, CV_32FC1);
     bool isnumber = false;
     Mat stagedImage = preprocess_image_digit(grayimage, 50, 50, isnumber);
@@ -152,13 +152,8 @@ int Ocr::classify(Mat grayimage, int imagesize){
         }
         float detectedClass = knn->find_nearest(sample2, 1);
 
-        cout<< (int) ((detectedClass));
+        output_num = (int) ((detectedClass));
     }
-    else{
-        cout << " ";
-    }
-    if(num_iterations%9==0){
-        cout<<endl;
-    }
-    num_iterations++;
+
+    return output_num;
 }

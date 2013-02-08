@@ -104,7 +104,14 @@ void SudokuAnalysis::extrae_digitos(Mat warp_image){
             v_puntos.push_back(Point(sep_x+50,sep_y+50));
             /**/
             Mat tmp(warp_image, cv::Range(sep_x, sep_x+50), cv::Range(sep_y, sep_y+50));
-            myocr->classify(tmp, 2500);
+            int detected_num = myocr->classify(tmp, 2500);
+
+            if(detected_num ==-1){
+                cout<<" ";
+            }
+            else{
+                    cout<<detected_num;
+            }
 
             // compute sum of positive matrix elements, iterator-based variant
             //namedWindow("Digit", CV_WINDOW_AUTOSIZE );
@@ -123,6 +130,7 @@ void SudokuAnalysis::extrae_digitos(Mat warp_image){
             sep_y = sep_y + 50;
         }
         sep_x= sep_x+50;
+        cout<<endl;
     }
 
     //namedWindow( "Warp Image threshold", CV_WINDOW_AUTOSIZE );

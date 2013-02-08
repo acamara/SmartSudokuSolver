@@ -32,7 +32,6 @@ class Ocr{
         KNearest *knn;
         CvMat* trainData;
         CvMat* trainClasses;
-        int num_iterations;
         int num_digits;
 };
 
