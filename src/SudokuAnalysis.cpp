@@ -83,9 +83,10 @@ void SudokuAnalysis::clasifica_linea(Vec4i line, vector<Vec4i> &vertical_lines, 
 
 }
 
-void SudokuAnalysis::extrae_digitos(Mat warp_image){
+vector<int> SudokuAnalysis::extrae_digitos(Mat warp_image){
     vector<vector<Point> > cuadrados_digitos;
     vector<Point> v_puntos;
+    vector<int> sudoku_digits;
 
     Mat undistortedThreshed = warp_image.clone();
     //adaptiveThreshold(warp_image, undistortedThreshed, 255, CV_ADAPTIVE_THRESH_GAUSSIAN_C, CV_THRESH_BINARY_INV, 101, 1);
@@ -105,13 +106,8 @@ void SudokuAnalysis::extrae_digitos(Mat warp_image){
             /**/
             Mat tmp(warp_image, cv::Range(sep_x, sep_x+50), cv::Range(sep_y, sep_y+50));
             int detected_num = myocr->classify(tmp, 2500);
+            sudoku_digits.push_back(detected_num);
 
-            if(detected_num ==-1){
-                cout<<" ";
-            }
-            else{
-                    cout<<detected_num;
-            }
 
             // compute sum of positive matrix elements, iterator-based variant
             //namedWindow("Digit", CV_WINDOW_AUTOSIZE );
@@ -126,15 +122,15 @@ void SudokuAnalysis::extrae_digitos(Mat warp_image){
 
             cuadrados_digitos.push_back(v_puntos);
             //cout<<v_puntos<<endl;
-            k++;
+            //k++;
             sep_y = sep_y + 50;
         }
         sep_x= sep_x+50;
-        cout<<endl;
     }
 
     //namedWindow( "Warp Image threshold", CV_WINDOW_AUTOSIZE );
 	//imshow( "Warp Image threshold", undistortedThreshed );
+	return sudoku_digits;
 }
 
 void SudokuAnalysis::muestra_gridpuzzle(Mat warp_image){

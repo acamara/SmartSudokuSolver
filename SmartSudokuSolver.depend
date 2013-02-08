@@ -7,13 +7,13 @@
 	"string"
 	"sstream"
 
-1360319597 source:d:\users\albert\desktop\albert\programación\c++\smartsudokusolver\src\main.cpp
+1360323758 source:d:\users\albert\desktop\albert\programación\c++\smartsudokusolver\src\main.cpp
 	"vector"
 	"string"
 	"Ocr.h"
 	"SudokuAnalysis.h"
 
-1360321782 source:d:\users\albert\desktop\albert\programación\c++\smartsudokusolver\src\ocr.cpp
+1360323735 source:d:\users\albert\desktop\albert\programación\c++\smartsudokusolver\src\ocr.cpp
 	"Ocr.h"
 	<stdio.h>
 
@@ -28,10 +28,10 @@
 
 1360315721 d:\users\albert\desktop\albert\programación\c++\smartsudokusolver\src\sudokusolver.h
 
-1360321544 source:d:\users\albert\desktop\albert\programación\c++\smartsudokusolver\src\sudokuanalysis.cpp
+1360322948 source:d:\users\albert\desktop\albert\programación\c++\smartsudokusolver\src\sudokuanalysis.cpp
 	"SudokuAnalysis.h"
 
-1360317333 d:\users\albert\desktop\albert\programación\c++\smartsudokusolver\src\sudokuanalysis.h
+1360322627 d:\users\albert\desktop\albert\programación\c++\smartsudokusolver\src\sudokuanalysis.h
 	"opencv2/opencv.hpp"
 	"opencv2/highgui/highgui.hpp"
 	"opencv2/imgproc/imgproc.hpp"

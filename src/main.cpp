@@ -35,8 +35,15 @@ int main(int argc, char** argv) {
 	Mat warp_image = sudokuanalysis.transforma_perspectiva(cuadrado_sudoku, image_gray);
 
 	//Extrae los digitos del sudoku
-	sudokuanalysis.extrae_digitos(warp_image);
-
+	vector<int> sudoku_digits = sudokuanalysis.extrae_digitos(warp_image);
+    cout<<endl;
+	for (int k = 0; k < 81; k++) {
+        if(sudoku_digits[k]==-1) cout<<"| ";
+        else cout<<'|'<<sudoku_digits[k];
+        if((k+1)%9==0){
+            cout<<endl;
+        }
+    }
     waitKey(0);
     return 0;
 }
