@@ -144,7 +144,7 @@ bool Ocr::train(CvMat* trainData, CvMat* trainClasses){
 }
 
 int Ocr::classify(Mat grayimage, int imagesize){
-    int output_num = -1;
+    int output_num = 0;
     CvMat* sample2 = cvCreateMat(1, imagesize, CV_32FC1);
     bool isnumber = false;
     Mat stagedImage = preprocess_image_digit(grayimage, 50, 50, isnumber);

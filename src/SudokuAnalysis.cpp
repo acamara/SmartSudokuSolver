@@ -1,4 +1,4 @@
-#include "SudokuAnalysis.h"
+#include "sudokuanalysis.h"
 
 SudokuAnalysis::SudokuAnalysis(){
     myocr = new Ocr();
@@ -189,14 +189,14 @@ vector<Point> SudokuAnalysis::detecta_sudoku_puzzle (Mat src, Mat src_gray){
 				cuadrado_sudoku = contours_poly[i];
 				biggest = i;
 				max_area = area;
-				cout << "biggest: "<<biggest<<" Max area: "<< area<<endl;
+				//cout << "biggest: "<<biggest<<" Max area: "<< area<<endl;
 			}
 		}
 	}
 
-	cout<<"Cuadrado sudoku "<<cuadrado_sudoku<<endl;
+	//cout<<"Cuadrado sudoku "<<cuadrado_sudoku<<endl;
 	cuadrado_sudoku = reordena_puntos_cuadrado(cuadrado_sudoku);
-	cout<<"Vector de salida: "<<cuadrado_sudoku<<endl;
+	//cout<<"Vector de salida: "<<cuadrado_sudoku<<endl;
 
 	// Draw sudoku puzzle contour
 	Mat drawing = src.clone();

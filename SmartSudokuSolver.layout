@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="src\main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\sudokuanalysis.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1171" topLine="26" />
+			<Cursor1 position="6214" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="2" />
+			<Collapse line="7" />
+			<Collapse line="11" />
+		</Folding>
+	</File>
+	<File name="src\sudokusolver.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1177" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="18" />
+			<Collapse line="23" />
+		</Folding>
+	</File>
+	<File name="src\sudokuanalysis.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="590" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\ocr.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\sudokusolver.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4272" topLine="3" />
+			<Cursor1 position="1708" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="4" />
+			<Collapse line="19" />
+			<Collapse line="34" />
+			<Collapse line="55" />
+			<Collapse line="64" />
+			<Collapse line="82" />
+			<Collapse line="91" />
+			<Collapse line="125" />
+			<Collapse line="136" />
+		</Folding>
+	</File>
+	<File name="src\main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="262" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\ocr.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4271" topLine="12" />
 		</Cursor>
 		<Folding>
 			<Collapse line="3" />
@@ -19,24 +59,9 @@
 			<Collapse line="123" />
 		</Folding>
 	</File>
-	<File name="src\ocr.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\ocr.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="666" topLine="14" />
-		</Cursor>
-	</File>
-	<File name="src\SudokuAnalysis.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3724" topLine="15" />
-		</Cursor>
-		<Folding>
-			<Collapse line="2" />
-			<Collapse line="7" />
-			<Collapse line="11" />
-		</Folding>
-	</File>
-	<File name="src\SudokuAnalysis.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="587" topLine="12" />
+			<Cursor1 position="195" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

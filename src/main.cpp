@@ -1,7 +1,8 @@
 #include "vector"
 #include "string"
 #include "Ocr.h"
-#include "SudokuAnalysis.h"
+#include "sudokuanalysis.h"
+#include "sudokusolver.h"
 
 using namespace std;
 
@@ -36,7 +37,8 @@ int main(int argc, char** argv) {
 
 	//Extrae los digitos del sudoku
 	vector<int> sudoku_digits = sudokuanalysis.extrae_digitos(warp_image);
-    cout<<endl;
+
+    cout<<"Sudoku de entrada: "<<endl<<endl;
 	for (int k = 0; k < 81; k++) {
         if(sudoku_digits[k]==-1) cout<<"| ";
         else cout<<'|'<<sudoku_digits[k];
@@ -44,6 +46,21 @@ int main(int argc, char** argv) {
             cout<<endl;
         }
     }
+    cout<<endl;
+    cout<<"Sudoku resuelto: "<<endl<<endl;
+    SudokuSolver::inicializa();
+    //string linea="4.....8.5.3..........7......2.....6.....8.4......1.......6.3.7.5..2.....1.4......";;
+
+    SudokuSolver* S = SudokuSolver::soluciona(new SudokuSolver(sudoku_digits));
+    if (S != NULL) {
+        S->escribe(cout);
+    }
+    else {
+        cout << "No hay solución";
+    }
+    delete S;
+    cout << endl;
+
     waitKey(0);
     return 0;
 }
